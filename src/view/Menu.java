@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Menu {
 	private Scanner scanner = new Scanner(System.in);
 	
-	public int readAddRelativeOption(String name) {
+	public int readRelativeOption(String name) {
 		System.out.printf("O que quer adicionar para %s\n\n", name);
 
 		int option = 0;
