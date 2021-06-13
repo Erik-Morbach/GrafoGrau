@@ -8,7 +8,7 @@ public class Edge {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Edge(int degree, Node destiny) {
+	public Edge(Node destiny, int degree) {
 		super();
 		this.degree = degree;
 		this.destiny = destiny;
