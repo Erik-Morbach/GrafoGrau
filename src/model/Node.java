@@ -18,6 +18,7 @@ public class Node {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public List<Edge> getEdges() {
 		return edges;
 	}
