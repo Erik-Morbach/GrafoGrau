@@ -20,9 +20,9 @@ public class FamilyGraph {
 		this.treeMap.put(relative, node);
 	}
 	
-	public void addEdge(Node node1, Node node2, int grade) {
-		Edge edge1 = new Edge(node2, grade);
-		Edge edge2 = new Edge(node1, grade);
+	public void addEdge(Node node1, Node node2, int degree) {
+		Edge edge1 = new Edge(node2, degree);
+		Edge edge2 = new Edge(node1, degree);
 		
 		List<Edge> edgesNode1 = node1.getEdges();
 		edgesNode1.add(edge1);
