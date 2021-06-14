@@ -1,11 +1,40 @@
 package view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import model.Person;
 
 public class Menu {
 	private Scanner scanner = new Scanner(System.in);
+	private final String erroMsg = "Por favor insira um valor válido";
+	
+	public Menu() {
+		System.out.print("Bem vindo ao GrafoGrau, uma aplicação para medir grau de parentesco entre você e seus parentes!!\n\n");
+	}
+	
+	public void displayDegree(int degree) {
+		if(degree < 0)
+			System.out.print("Algo de ruim aconteceu :c");
+		System.out.printf("Parente de %d° Grau", degree);
+	}
+	
+	public int readRelativeIndexOnFamily(ArrayList<Person> family) {
+		int option = 0;
+		while(true) {
+			int count = 0;
+			for (Person relative : family)
+				System.out.printf("%d. %s\n",++count, relative.getName());
+			
+			option = this.scanner.nextInt();
+			
+			if(option <= 0) {
+				System.out.println(erroMsg);
+			}
+			break;
+		}
+		return option-1;
+	}
 	
 	public int readRelativeOption(String name) {
 		System.out.printf("O que quer adicionar para %s\n\n", name);
@@ -23,7 +52,7 @@ public class Menu {
 			case 3: 
 				break loop;
 			default:
-				System.out.println("Por favor insira uma opção válida");
+				System.out.println(erroMsg);
 				continue;
 			}
 		}
@@ -52,7 +81,7 @@ public class Menu {
 			System.out.print("idade: ");
 			age = this.scanner.nextInt();
 			if(age <= 0) {
-				System.out.println("Digite uma idade válida");
+				System.out.println(erroMsg);
 				continue;		
 			}
 			user.setAge(age);
@@ -71,7 +100,7 @@ public class Menu {
 			System.out.print("nome: ");
 			name = this.scanner.nextLine();
 			if(name.length() <= 0) {
-				System.out.println("Digite um nome válido");
+				System.out.println(erroMsg);
 				continue;
 			}				
 			person.setName(name);
@@ -83,7 +112,7 @@ public class Menu {
 			System.out.print("idade: ");
 			age = this.scanner.nextInt();
 			if(age <= 0) {
-				System.out.println("Digite uma idade válida");
+				System.out.println(erroMsg);
 				continue;		
 			}
 			person.setAge(age);
