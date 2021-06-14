@@ -7,7 +7,6 @@ import java.util.Stack;
 import model.FamilyGraph;
 import model.Person;
 import view.Menu;
-import view.PersonStack;
 
 public class Main {
 	private static ArrayList<Person> family;
