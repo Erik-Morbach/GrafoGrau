@@ -15,18 +15,23 @@ public class Menu {
 	
 	public void displayDegree(int degree) {
 		if(degree < 0)
-			System.out.print("Algo de ruim aconteceu :c");
-		System.out.printf("Parente de %d° Grau", degree);
+			System.out.print("Algo de ruim aconteceu :c\n");
+		System.out.printf("Parente de %d° Grau\n", degree);
 	}
 	
 	public int readRelativeIndexOnFamily(ArrayList<Person> family) {
 		int option = 0;
+		System.out.println("\nQual parente você deseja saber o parentesco ?");
 		while(true) {
 			int count = 0;
 			for (Person relative : family)
 				System.out.printf("%d. %s\n",++count, relative.getName());
 			
 			option = this.scanner.nextInt();
+			if(option>family.size()) {
+				System.out.print(erroMsg);
+				continue;
+			}
 			
 			if(option <= 0) {
 				System.out.println(erroMsg);
@@ -68,6 +73,7 @@ public class Menu {
 		while(true) {
 			System.out.print("nome: ");
 			name = this.scanner.nextLine();
+			if(name.length()==0) name = this.scanner.nextLine();
 			if(name.length() <= 0) {
 				System.out.println("Digite um nome válido");
 				continue;

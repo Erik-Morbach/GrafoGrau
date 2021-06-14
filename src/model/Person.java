@@ -16,7 +16,7 @@ public class Person implements Comparable<Person>{
 	}
 	@Override
 	public String toString() {
-		return String.format("PARENTE\nnome=$s\nidade=%d",this.name, this.age);
+		return String.format("%s, %d",this.name, this.age);
 	}
 	public String getName() {
 		return name;
