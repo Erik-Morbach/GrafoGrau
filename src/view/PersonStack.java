@@ -30,6 +30,11 @@ public class PersonStack {
 	}
 	
 	public void add(Person person) {
+		if(this.isEmpty()) {
+			this.person = person;
+			this.last = this; //new PersonStack(person);
+			return;
+		}
 		PersonStack current = this;
 		while(true) {
 			if(current.next != null) {
@@ -48,7 +53,7 @@ public class PersonStack {
 		if(this.isEmpty()) return null;
 		Person poped = this.last.person;
 		this.last = this.last.previous;
-		this.last.next = null;
+		if(this.last!=null) this.last.next = null;
 		return poped;
 	}
 	

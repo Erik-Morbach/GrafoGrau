@@ -2,6 +2,7 @@ package controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Stack;
 
 import model.FamilyGraph;
 import model.Person;
@@ -12,11 +13,11 @@ public class Main {
 	private static ArrayList<Person> family;
 	private static FamilyGraph graph;
 	private static Menu menu;
-	private static PersonStack stack; 
+	private static Stack<Person> stack; 
 	
 	private static void setup() {
 		menu = new Menu();
-		stack = new PersonStack();
+		stack = new Stack<Person>();
 		Person user = menu.readUserInfo();
 		stack.add(user);
 		graph = new FamilyGraph(user);
@@ -34,6 +35,7 @@ public class Main {
 		family.add(relative);
 		graph.addNode(relative);
 		graph.addEdge(person, relative);
+		stack.add(relative);
 	}
 	
 	private static void search() {

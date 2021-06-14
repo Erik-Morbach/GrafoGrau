@@ -75,7 +75,7 @@ public class FamilyGraph {
 		
 		
 		while(!queue.isEmpty()) {
-			Entry<Integer,Node> currentPair = queue.peek();
+			Entry<Integer,Node> currentPair = queue.poll();
 			int currentDegree = currentPair.getKey();
 			Node currentNode = currentPair.getValue();
 			
