@@ -2,6 +2,8 @@ package view;
 
 import java.util.Scanner;
 
+import model.Person;
+
 public class Menu {
 	private Scanner scanner = new Scanner(System.in);
 	
@@ -29,14 +31,65 @@ public class Menu {
 		return option;
 	}
 	
-	public String readUserName() {
-		System.out.print("Insira seu nome: ");
-		String name = this.scanner.nextLine();
-		System.out.print("\n\n");
-		return name;
+	public Person readUserInfo() {
+		System.out.print("Insira seus dados: ");
+		Person user = new Person(true);
+		
+		String name = "";
+		while(true) {
+			System.out.print("nome: ");
+			name = this.scanner.nextLine();
+			if(name.length() <= 0) {
+				System.out.println("Digite um nome válido");
+				continue;
+			}				
+			user.setName(name);
+			break;
+		}
+		
+		int age = 0;
+		while(true) {
+			System.out.print("idade: ");
+			age = this.scanner.nextInt();
+			if(age <= 0) {
+				System.out.println("Digite uma idade válida");
+				continue;		
+			}
+			user.setAge(age);
+			break;
+		}
+		
+		return user;
 	}
 	
-	public readPersonInfo() {
+	public Person readRelativeInfo() {
+		System.out.println("Digite os dados deste parente");
+		Person person = new Person();
 		
+		String name = "";
+		while(true) {
+			System.out.print("nome: ");
+			name = this.scanner.nextLine();
+			if(name.length() <= 0) {
+				System.out.println("Digite um nome válido");
+				continue;
+			}				
+			person.setName(name);
+			break;
+		}
+		
+		int age = 0;
+		while(true) {
+			System.out.print("idade: ");
+			age = this.scanner.nextInt();
+			if(age <= 0) {
+				System.out.println("Digite uma idade válida");
+				continue;		
+			}
+			person.setAge(age);
+			break;
+		}	
+		
+		return person;
 	}
 }
