@@ -28,14 +28,10 @@ public class Menu {
 				System.out.printf("%d. %s\n",++count, relative.toString());
 			
 			option = this.scanner.nextInt();
-			if(option>family.size()) {
-				System.out.print(erroMsg);
-				continue;
-			}
-			
-			if(option <= 0) {
-				System.out.println(erroMsg);
-			}
+			if(option <=0 || option>family.size()) {
+                System.out.print(erroMsg);
+                continue;
+            }
 			break;
 		}
 		return option-1;
