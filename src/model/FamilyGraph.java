@@ -63,7 +63,7 @@ public class FamilyGraph {
 		
 		Node userNode = personMaper.get(user);
 		
-		PriorityQueue<Entry<Integer,Node>> queue = new PriorityQueue<Entry<Integer,Node>>();
+		PriorityQueue<Entry<Integer,Node>> queue = new PriorityQueue<Entry<Integer,Node>>(1,new EntryComparator());
 		
 		
 		if(userShortcutRelations.size()==0) 
