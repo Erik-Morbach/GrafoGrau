@@ -7,7 +7,7 @@ import model.Person;
 
 public class Menu {
 	private Scanner scanner = new Scanner(System.in);
-	private final String erroMsg = "Por favor insira um valor válido";
+	private final String erroMsg = "Por favor insira um valor válido\n";
 	
 	public Menu() {
 		System.out.print("Bem vindo ao GrafoGrau, uma aplicação para medir grau de parentesco entre você e seus parentes!!\n\n");
