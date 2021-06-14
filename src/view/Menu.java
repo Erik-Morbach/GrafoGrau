@@ -61,7 +61,7 @@ public class Menu {
 	}
 	
 	public Person readUserInfo() {
-		System.out.print("Insira seus dados: ");
+		System.out.print("Insira seus dados\n\n");
 		Person user = new Person(true);
 		
 		String name = "";
