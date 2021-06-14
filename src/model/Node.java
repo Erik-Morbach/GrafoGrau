@@ -2,7 +2,7 @@ package model;
 
 import java.util.List;
 
-public class Node {
+public class Node{
 	private List<Edge> edges;
 	private Person person;
 	public Node(List<Edge> edges, Person person) {
