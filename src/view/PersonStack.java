@@ -37,10 +37,11 @@ public class PersonStack {
 				stack = stack.next;
 				continue;
 			}
-			
-			this.person = person;
-			stack.next = this.last;
+			break;
 		}
+		this.person = person;
+		stack.next = this.last;
+		
 	}
 	
 	public Person pop() {

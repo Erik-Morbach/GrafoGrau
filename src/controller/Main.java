@@ -20,7 +20,8 @@ public class Main {
 		Person user = menu.readUserInfo();
 		stack.add(user);
 		graph = new FamilyGraph(user);
-		family = (ArrayList<Person>) Arrays.asList(user);
+		family = new ArrayList<Person>();
+		family.add(user);
 		
 	}
 	
@@ -45,6 +46,7 @@ public class Main {
 			setup();
 			while(!stack.isEmpty())
 				loop();
+			
 			while(true)
 				search();
 	}

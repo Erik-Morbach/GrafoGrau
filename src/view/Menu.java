@@ -87,7 +87,6 @@ public class Menu {
 			user.setAge(age);
 			break;
 		}
-		
 		return user;
 	}
 	
