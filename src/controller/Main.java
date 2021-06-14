@@ -21,8 +21,6 @@ public class Main {
 		stack.add(user);
 		graph = new FamilyGraph(user);
 		family = new ArrayList<Person>();
-		family.add(user);
-		
 	}
 	
 	private static void loop() {
