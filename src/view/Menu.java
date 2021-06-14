@@ -25,7 +25,7 @@ public class Menu {
 		while(true) {
 			int count = 0;
 			for (Person relative : family)
-				System.out.printf("%d. %s\n",++count, relative.getName());
+				System.out.printf("%d. %s\n",++count, relative.toString());
 			
 			option = this.scanner.nextInt();
 			if(option>family.size()) {
@@ -104,6 +104,7 @@ public class Menu {
 		while(true) {
 			System.out.print("nome: ");
 			name = this.scanner.nextLine();
+			if(name.length()==0) name = this.scanner.nextLine();
 			if(name.length() <= 0) {
 				System.out.println(erroMsg);
 				continue;
