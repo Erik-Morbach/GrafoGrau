@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Node{
@@ -13,10 +14,11 @@ public class Node{
 	public Node(Person person) {
 		super();
 		this.person = person;
+		this.edges = new ArrayList<Edge>();
 	}
 	public Node() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.edges = new ArrayList<Edge>();
 	}
 	
 	public List<Edge> getEdges() {

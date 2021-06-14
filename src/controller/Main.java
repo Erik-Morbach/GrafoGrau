@@ -32,6 +32,7 @@ public class Main {
 		stack.add(person);
 		Person relative = menu.readRelativeInfo();
 		family.add(relative);
+		graph.addNode(relative);
 		graph.addEdge(person, relative);
 	}
 	
